@@ -1,6 +1,5 @@
 // server.js
 import express from 'express';
-const port = process.env.PORT || 3001;
 
 let app = require('./server').default;
 
@@ -17,6 +16,8 @@ if (module.hot) {
     });
     console.info('✅  Server-side HMR Enabled!');
 }
+
+const port = process.env.PORT || 3000;
 
 export default express()
     .use((req, res) => app.handle(req, res))
