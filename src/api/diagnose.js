@@ -11,6 +11,7 @@ router.post('/diagnose', async (req, res) => {
         const makeToken = generateToken()
         if(makeToken !== token) {
             res.status(403).json({ success: false, error: 'Bạn không có quyền truy cập API này' });
+            return;
         }
         const externalApiResponse = await axios.get('https://emoapp-api.azurewebsites.net/uploadgetresults?input=' + encodeURI(text));
 
