@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {TextField, Button, LinearProgress, Typography, Box} from "@mui/material";
 import axios from "axios";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import generateToken from "../helper/generateToken";
 
 function EmotionAnalyzer() {
     const [text, setText] = useState("");
@@ -18,7 +19,8 @@ function EmotionAnalyzer() {
     const handleSubmit = async () => {
         try {
             setLoading(true);
-            const response = await axios.post("/api/diagnose", {text});
+            const token = generateToken()
+            const response = await axios.post("/api/diagnose", {text, token});
             const {score, label} = response.data.data;
             const isBadState = +label === 0;
             const emotionLabel = isBadState ? "Tệ" : "Tốt"
@@ -39,6 +41,7 @@ function EmotionAnalyzer() {
 
                 }
             }
+
         } catch (error) {
             console.error("Không thể phân tích nội dung yêu cầu:", error);
         } finally {
@@ -60,7 +63,6 @@ function EmotionAnalyzer() {
 
     const stopListening = () => {
         SpeechRecognition.stopListening();
-       if(text.trim().length > 2)  handleSubmit();
     }
 
 
@@ -69,6 +71,20 @@ function EmotionAnalyzer() {
         setLanguage(navigator.language)
     }, [])
     const isSupportVNs = language === 'vi-VN';
+
+    React.useEffect(() => {
+        if(text.trim().length <= 2) return;
+
+        const timeout = setTimeout(() => {
+            handleSubmit();
+        }, 1000);
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, [text]);
+
+
 
     return (
         <div style={{ textAlign: 'center', marginTop: '50px' }}>
@@ -141,6 +157,20 @@ function EmotionAnalyzer() {
                         }}
                     >
                         {loading ? 'Đang xử lý...' : 'Phân tích'}
+                    </Button>
+                    <Button
+                        variant="contained"
+                        onClick={() => {setText('')}}
+                        disabled={loading}
+                        sx={{
+                            background: '#c5630f',
+                            color: '#fff',
+                            '&:hover': {
+                                background: '#8e5f38',
+                            },
+                        }}
+                    >
+                        Làm mới
                     </Button>
                 </Box>
 

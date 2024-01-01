@@ -7,6 +7,13 @@ import {StaticRouter} from "react-router-dom/server";
 import App from "./App";
 import React from "react";
 
+import * as admin from "firebase-admin";
+import * as serviceAccount from './api/ifeeldigitalz-firebase-adminsdk-jnbf1-8149b2557a.json'
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://ifeeldigitalz-default-rtdb.asia-southeast1.firebasedatabase.app',
+});
+
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
 const cssLinksFromAssets = (assets, entrypoint) => {
@@ -65,6 +72,7 @@ const server = express();
 server
     .use(cors('*'))
     .disable('x-powered-by')
+    .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
     .use(bodyParser.json({ limit: '5mb' }))
     .use(bodyParser.urlencoded({ extended: true }))
     .use('/api', diagnose)

@@ -27,3 +27,7 @@ P
  src/component/EmotionAnalyzer.js,f\4\f4e8b2bd1c10ac4c3358bdd3e150a89f7cb278a2
 @
 razzle.config.js,7\5\75ddd89d63cad6e4ce3795593b10b35fea4f547a
+K
+src/helper/generateToken.js,4\8\4863b1515538b8fca65bf8a4ec87fb075dcb6eb3
+i
+9src/ifeeldigitalz-firebase-adminsdk-jnbf1-8149b2557a.json,0\9\09a3f5a346a85d39f941f5ce479d8f846cf81bc8
