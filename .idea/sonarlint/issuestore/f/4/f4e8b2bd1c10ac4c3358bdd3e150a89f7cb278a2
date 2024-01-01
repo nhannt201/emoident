@@ -1,2 +1,4 @@
 
-bjavascript:S6660%"?'If' statement should not be the only statement in 'else' block(¹ßƒº8ÀÕæ’Ì1
+bjavascript:S6660'"?'If' statement should not be the only statement in 'else' block(¹ßƒº8˜„–˜Ì1
+vjavascript:S6847ð"RNon-interactive elements should not be assigned mouse or keyboard event listeners.(Æœ¢Ã8˜„–˜Ì1
+ƒjavascript:S1082ð"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(Æœ¢Ã8˜„–˜Ì1

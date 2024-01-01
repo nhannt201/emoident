@@ -17,6 +17,8 @@ function EmotionAnalyzer() {
     };
 
     const handleSubmit = async () => {
+        if(text.trim().length < 2) return;
+
         try {
             setLoading(true);
             const token = generateToken()
@@ -84,12 +86,21 @@ function EmotionAnalyzer() {
         };
     }, [text]);
 
+    const appLink = 'https://play.google.com/store/apps/details?id=btec.nextstep.ifeeldigital';
 
+    const handleAppLinkClick = () => {
+        window.open(appLink, '_blank');
+    };
+
+    const handleShareOnFacebook = () => {
+        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://emoident.com/')}`;
+        window.open(shareUrl, '_blank');
+    };
 
     return (
         <div style={{ textAlign: 'center', marginTop: '50px' }}>
             <Typography variant="h4" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
-                Emoident
+                Emoident (Beta)
             </Typography>
             <Typography variant="subtitle1" sx={{ marginBottom: '20px', color: 'grey' }}>
                  Thang đo cảm xúc trong văn bản
@@ -106,6 +117,7 @@ function EmotionAnalyzer() {
                     boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
                     borderRadius: '8px',
                     padding: '20px',
+                    marginBottom: '50px'
                 }}
             >
                 <TextField
@@ -147,7 +159,7 @@ function EmotionAnalyzer() {
                     <Button
                         variant="contained"
                         onClick={handleSubmit}
-                        disabled={loading}
+                        disabled={loading || text.trim().length < 2}
                         sx={{
                             background: '#4caf50',
                             color: '#fff',
@@ -161,7 +173,7 @@ function EmotionAnalyzer() {
                     <Button
                         variant="contained"
                         onClick={() => {setText('')}}
-                        disabled={loading}
+                        disabled={loading || text.trim().length < 2}
                         sx={{
                             background: '#c5630f',
                             color: '#fff',
@@ -172,6 +184,17 @@ function EmotionAnalyzer() {
                     >
                         Làm mới
                     </Button>
+
+                    <Button variant="contained" color="primary" onClick={handleShareOnFacebook}  sx={{
+                        background: '#0f58c5',
+                        color: '#fff',
+                        '&:hover': {
+                            background: '#38508e',
+                        },
+                    }}>
+                        Chia sẻ lên Facebook
+                    </Button>
+
                 </Box>
 
                 {emotionScore !== null && (
@@ -193,7 +216,50 @@ function EmotionAnalyzer() {
                         />
                     </Box>
                 )}
+
             </Box>
+
+            <Typography variant="h6" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
+                Mời bạn dùng thử
+            </Typography>
+
+            <Box
+                display="flex"
+                flexDirection="row"
+                justifyContent="center"
+                alignItems="center"
+                sx={{
+                    maxWidth: '500px',
+                    margin: 'auto',
+                    border: '1px solid #ccc',
+                    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+                    borderRadius: '8px',
+                    padding: '20px',
+                }}
+            >
+                <img
+                    src="https://play-lh.googleusercontent.com/XPrBBMGQDWHpHS_n20YXOOza5Q1AUcPBcCKPjcsSrUWcOipNv-x1l_3wHqEw1RgGOOo=s96-rw"
+                    alt="Ứng dụng trên Play Store"
+                    style={{ maxWidth: '80px', marginRight: '20px', cursor: 'pointer' }}
+                    onClick={handleAppLinkClick}
+                />
+                <div style={{ flex: 1, textAlign: 'left'}}>
+                    <a href={appLink} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Typography variant="h5" sx={{ fontWeight: 'bold', cursor: 'pointer' }} onClick={handleAppLinkClick}>
+                           FeelApp
+                    </Typography>
+
+                        <Typography variant="h6">
+                           Lắng nghe tâm sự của bạn
+                        </Typography>
+
+                    <Typography variant="body2">
+                        Một người bạn giúp lắng nghe tâm sự, cảm xúc của bạn và đưa ra lời khuyên.
+                    </Typography>
+                    </a>
+                </div>
+            </Box>
+
         </div>
     );
 };

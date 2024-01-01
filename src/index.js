@@ -1,6 +1,14 @@
 // server.js
 import express from 'express';
 
+import * as admin from "firebase-admin";
+import * as serviceAccount from './api/ifeeldigitalz-firebase-adminsdk-jnbf1-8149b2557a.json'
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://ifeeldigitalz-default-rtdb.asia-southeast1.firebasedatabase.app',
+});
+
+
 let app = require('./server').default;
 
 if (module.hot) {
