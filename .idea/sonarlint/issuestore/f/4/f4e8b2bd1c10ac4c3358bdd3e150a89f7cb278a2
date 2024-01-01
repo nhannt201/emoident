@@ -1,4 +1,7 @@
 
-bjavascript:S6660'"?'If' statement should not be the only statement in 'else' block(¹ßƒº8˜„–˜Ì1
-vjavascript:S6847ð"RNon-interactive elements should not be assigned mouse or keyboard event listeners.(Æœ¢Ã8˜„–˜Ì1
-ƒjavascript:S1082ð"_Visible, non-interactive elements with click handlers must have at least one keyboard listener.(Æœ¢Ã8˜„–˜Ì1
+Njavascript:S1128"&Remove this unused import of 'Button'.(–ýÍ¨üÿÿÿÿ8µÓåœÌ1
+Vjavascript:S1128".Remove this unused import of 'LinearProgress'.(–ýÍ¨üÿÿÿÿ8Ø­îœÌ1
+Kjavascript:S1128"#Remove this unused import of 'Box'.(–ýÍ¨üÿÿÿÿ8Æ¶úœÌ1
+bjavascript:S6660,"?'If' statement should not be the only statement in 'else' block(¹ßƒº8˜„–˜Ì1
+yjavascript:S1481<"QRemove the declaration of the unused 'browserSupportsSpeechRecognition' variable.(“õ¹…þÿÿÿÿ8Ö¢†Ì1
+vjavascript:S1854<"NRemove this useless assignment to variable "browserSupportsSpeechRecognition".(“õ¹…þÿÿÿÿ8Ö¢†Ì1

@@ -47,7 +47,7 @@ const renderApp = (req, res) => {
           <meta name="keywords" content="Emoident, thang đo cảm xúc, phân tích văn bản, đánh giá cảm xúc">
           <meta name="author" content="Nguyễn Trung Nhẫn">
       
-          <meta property="og:title" content="Emoident - Công cụ đo cảm xúc trong văn bản">
+          <meta property="og:title" content="Emoident - Thang đo cảm xúc trong văn bản">
           <meta property="og:description" content="Emoident là công cụ thang đo cảm xúc trong văn bản, giúp phân tích và hiểu độ chân thật của cảm xúc trong nội dung. Theo dõi và đánh giá mức độ cảm xúc từ tích cực đến tiêu cực.">
           <meta property="og:image" content="${currentUrl}/images/shared.png">
           <meta property="og:url" content="${currentUrl}">
