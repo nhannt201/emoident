@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime'
 import React, { useState } from "react";
-import {TextField, Button, LinearProgress, Typography, Box} from "@mui/material";
+import {TextField,  Typography} from "@mui/material";
 import axios from "axios";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import generateToken from "../helper/generateToken";
@@ -26,6 +26,7 @@ function EmotionAnalyzer() {
 
         try {
             setLoading(true);
+            // Tôi biết bạn sẽ đọc được mà :))
             const token = generateToken()
             const response = await axios.post("/api/diagnose", {text, token});
             const {score, label} = response.data.data;
@@ -126,6 +127,7 @@ function EmotionAnalyzer() {
                     startListening={startListening}
                     stopListening={stopListening}
                     text={text}
+                    setText={setText}
                     loading={loading}
                     browserSupportsSpeechRecognition={browserSupportsSpeechRecognition}
                 />

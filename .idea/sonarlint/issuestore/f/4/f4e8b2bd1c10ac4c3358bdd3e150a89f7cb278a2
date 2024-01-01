@@ -1,7 +1,2 @@
 
-Njavascript:S1128"&Remove this unused import of 'Button'.(–ıÍ¨üÿÿÿÿ8µÓåœÌ1
-Vjavascript:S1128".Remove this unused import of 'LinearProgress'.(–ıÍ¨üÿÿÿÿ8Ø­îœÌ1
-Kjavascript:S1128"#Remove this unused import of 'Box'.(–ıÍ¨üÿÿÿÿ8Æ¶úœÌ1
-bjavascript:S6660,"?'If' statement should not be the only statement in 'else' block(¹ßƒº8˜„–˜Ì1
-yjavascript:S1481<"QRemove the declaration of the unused 'browserSupportsSpeechRecognition' variable.(“õ¹…şÿÿÿÿ8Ö¢†Ì1
-vjavascript:S1854<"NRemove this useless assignment to variable "browserSupportsSpeechRecognition".(“õ¹…şÿÿÿÿ8Ö¢†Ì1
+bjavascript:S6660-"?'If' statement should not be the only statement in 'else' block(¹ßƒº8˜„–˜Ì1

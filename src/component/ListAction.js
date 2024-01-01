@@ -1,7 +1,7 @@
 import {Box, Button} from "@mui/material";
 import React, {useEffect, useState} from "react";
 
-export default function ListAction({browserSupportsSpeechRecognition, listening, stopListening, startListening,isSupportVNs, handleSubmit, text, loading }) {
+export default function ListAction({browserSupportsSpeechRecognition, listening, stopListening, startListening,isSupportVNs, handleSubmit, text, setText, loading }) {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
