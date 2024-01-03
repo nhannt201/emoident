@@ -112,12 +112,12 @@ function EmotionAnalyzer() {
                     onChange={handleTextChange}
                     value={text}
                     inputProps={{
-                        maxLength: 5000,
+                        maxLength: 2000,
                     }}
                     sx={{ marginBottom: '20px' }}
                 />
                 <Typography variant="body2" sx={{ color: 'grey', marginBottom: '10px' }}>
-                    Đã nhập: {text.length} / 5000 kí tự
+                    Đã nhập: {text.length} / 2000 kí tự
                 </Typography>
 
                 <ListAction
